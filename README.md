@@ -8,23 +8,30 @@ An assignment for the Rabobank
 - For the front-end I took `NextJS` as a framework. It is easy to set up for data fetching, typescript and styling.
 - For the back-end I took `ExpressJS` as a framework since it is the one framework I know how to use to set up a relative simple API.
 
-===
+---
 
 ## How to run
 
-### Front-end
+### Concurrently
+
+- `npm install`
+- `npm run dev`
+
+### Separately
+
+#### Front-end
 
 - `cd client`
 - `npm install`
 - `npm run dev`
 
-### Back-end
+#### Back-end
 
 - `cd server`
 - `npm install`
 - `npm run dev`
 
-===
+---
 
 ## How to test
 
