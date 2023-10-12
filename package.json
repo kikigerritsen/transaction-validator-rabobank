@@ -1,0 +1,16 @@
+{
+  "name": "transaction-validator-rabobank",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kikigerritsen/transaction-validator-rabobank.git",
+  "author": "Kiki Gerritsen <kiki.gerritsen@teamrockstars.nl>",
+  "license": "MIT",
+  "scripts": {
+    "start:server": "node server/index.js",
+    "start:client": "cd client && yarn dev",
+    "start:dev": "concurrently \"yarn start:server\" \"yarn start:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
