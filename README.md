@@ -4,18 +4,12 @@ An assignment for the Rabobank
 
 ## Technical decisions
 
-- `Concurrently` is used to run both the front-end and back-end at the same time.
 - For the front-end I took `NextJS` as a framework. It is easy to set up for data fetching, typescript and styling.
 - For the back-end I took `ExpressJS` as a framework since it is the one framework I know how to use to set up a relative simple API.
 
 ---
 
 ## How to run
-
-### Concurrently
-
-- `npm install`
-- `npm run dev`
 
 ### Separately
 
@@ -25,11 +19,23 @@ An assignment for the Rabobank
 - `npm install`
 - `npm run dev`
 
+Or if you want to run it from the root:
+
+Prerequisite packages are installed with: `cd client && npm install`
+
+- `npm run start:client`
+
 #### Back-end
 
 - `cd server`
 - `npm install`
 - `npm run dev`
+
+Or if you want to run it from the root:
+
+Prerequisite packages are installed with: `cd server && npm install`
+
+- `npm run start:server`
 
 ---
 
