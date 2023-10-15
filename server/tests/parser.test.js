@@ -80,7 +80,6 @@ describe("convertFileContentsToObject", () => {
   });
 
   describe("XML", () => {
-    beforeEach(() => {});
     test("should convert XML file to object correctly", () => {
       const filePath = __dirname + "/test-files/xml/test.xml";
       const fileContents = fs.readFileSync(filePath, "utf8");
@@ -100,7 +99,7 @@ describe("convertFileContentsToObject", () => {
           if (record.reference === "138932") {
             return {
               ...record,
-              accountNumber: {},
+              accountNumber: undefined,
               endBalance: NaN,
             };
           }
@@ -120,8 +119,8 @@ describe("convertFileContentsToObject", () => {
           if (record.reference === "138932") {
             return {
               ...record,
-              accountNumber: {},
-              description: {},
+              accountNumber: undefined,
+              description: undefined,
               endBalance: NaN,
               mutation: NaN,
               startBalance: NaN,
@@ -143,7 +142,7 @@ describe("convertFileContentsToObject", () => {
           if (record.reference === "138932") {
             return {
               ...record,
-              reference: {},
+              reference: undefined,
             };
           }
           return record;

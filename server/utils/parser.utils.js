@@ -28,10 +28,20 @@ exports.convertFileContentsToObject = (fileName, file) => {
     case "xml":
       const xmlRecords = JSON.parse(parser.toJson(file)).records.record.map(
         (record) => {
+          console.log(typeof record.accountNumber);
           return {
-            reference: record.reference,
-            accountNumber: record.accountNumber,
-            description: record.description,
+            reference:
+              typeof record.reference === "string"
+                ? record.reference
+                : undefined,
+            accountNumber:
+              typeof record.accountNumber === "string"
+                ? record.accountNumber
+                : undefined,
+            description:
+              typeof record.description === "string"
+                ? record.description
+                : undefined,
             startBalance: parseFloat(record.startBalance),
             mutation: parseFloat(record.mutation),
             endBalance: parseFloat(record.endBalance),
