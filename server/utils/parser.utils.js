@@ -1,5 +1,29 @@
 const parser = require("xml2json");
 
+const getMutation = (record) => {
+  if (!record.mutation) {
+    return {
+      ...record,
+      mutation: undefined,
+      mutationType: undefined,
+    };
+  }
+  const retrunThis = {
+    ...record,
+    mutation: parseFloat(
+      record.mutation
+        ? record.mutation.substr(1, record.mutation.length - 1)
+        : undefined
+    ),
+    mutationType: record.mutation
+      ? record.mutation.charAt(0) === "-"
+        ? "-"
+        : "+"
+      : undefined,
+  };
+  return retrunThis;
+};
+
 exports.convertFileContentsToObject = (fileName, file) => {
   const extension = fileName.slice(((fileName.lastIndexOf(".") - 1) >>> 0) + 2); // Extract the file extension
 
@@ -19,16 +43,18 @@ exports.convertFileContentsToObject = (fileName, file) => {
           accountNumber,
           description,
           startBalance: parseFloat(startBalance),
-          mutation: parseFloat(mutation),
+          mutation,
           endBalance: parseFloat(endBalance),
         };
       });
       const removeFirstIndex = csvRecords.slice(1);
-      return removeFirstIndex;
+      if (removeFirstIndex[removeFirstIndex.length - 1].reference === "") {
+        removeFirstIndex.splice(removeFirstIndex.length - 1, 1);
+      }
+      return removeFirstIndex.map((record) => getMutation(record));
     case "xml":
       const xmlRecords = JSON.parse(parser.toJson(file)).records.record.map(
         (record) => {
-          console.log(typeof record.accountNumber);
           return {
             reference:
               typeof record.reference === "string"
@@ -43,12 +69,13 @@ exports.convertFileContentsToObject = (fileName, file) => {
                 ? record.description
                 : undefined,
             startBalance: parseFloat(record.startBalance),
-            mutation: parseFloat(record.mutation),
+            mutation:
+              typeof record.mutation === "string" ? record.mutation : undefined,
             endBalance: parseFloat(record.endBalance),
           };
         }
       );
-      return xmlRecords;
+      return xmlRecords.map((record) => getMutation(record));
     default:
       return {
         error: "Invalid file extension",

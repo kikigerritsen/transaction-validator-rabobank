@@ -5,6 +5,7 @@ const expectedCsv = [
     description: "Clothes from Richard de Vries",
     startBalance: 33.34,
     mutation: 5.55,
+    mutationType: "+",
     endBalance: 38.89,
   },
   {
@@ -12,7 +13,8 @@ const expectedCsv = [
     accountNumber: "NL27SNSB0917829871",
     description: "Subscription from Jan Dekker",
     startBalance: 28.95,
-    mutation: -19.44,
+    mutation: 19.44,
+    mutationType: "-",
     endBalance: 9.51,
   },
   {
@@ -20,7 +22,8 @@ const expectedCsv = [
     accountNumber: "NL93ABNA0585619023",
     description: "Subscription from Richard Bakker",
     startBalance: 13.89,
-    mutation: -46.18,
+    mutation: 46.18,
+    mutationType: "-",
     endBalance: -32.29,
   },
   {
@@ -29,6 +32,7 @@ const expectedCsv = [
     description: "Tickets for Daniël King",
     startBalance: 97.56,
     mutation: 46.41,
+    mutationType: "+",
     endBalance: 143.97,
   },
   {
@@ -37,6 +41,7 @@ const expectedCsv = [
     description: "Subscription from Daniël Theuß",
     startBalance: 102.33,
     mutation: 11.49,
+    mutationType: "+",
     endBalance: 113.82,
   },
   {
@@ -44,7 +49,8 @@ const expectedCsv = [
     accountNumber: "NL74ABNA0248990274",
     description: "Subscription for Rik Dekker",
     startBalance: 48.2,
-    mutation: -4.25,
+    mutation: 4.25,
+    mutationType: "-",
     endBalance: 43.95,
   },
   {
@@ -52,7 +58,8 @@ const expectedCsv = [
     accountNumber: "NL32RABO0195610843",
     description: "Candy for Willem King",
     startBalance: 98.99,
-    mutation: -7.85,
+    mutation: 7.85,
+    mutationType: "-",
     endBalance: 91.14,
   },
   {
@@ -60,7 +67,8 @@ const expectedCsv = [
     accountNumber: "NL90ABNA0585647886",
     description: "Tickets for Vincent Dekker",
     startBalance: 13.62,
-    mutation: -15.08,
+    mutation: 15.08,
+    mutationType: "-",
     endBalance: -1.46,
   },
   {
@@ -68,7 +76,8 @@ const expectedCsv = [
     accountNumber: "NL91RABO0315273637",
     description: "Tickets for Erik Dekker",
     startBalance: 53.31,
-    mutation: -15.85,
+    mutation: 15.85,
+    mutationType: "-",
     endBalance: 37.46,
   },
   {
@@ -77,6 +86,7 @@ const expectedCsv = [
     description: "Tickets for Richard de Vries",
     startBalance: 66.35,
     mutation: 44.27,
+    mutationType: "+",
     endBalance: 110.62,
   },
 ];
@@ -88,6 +98,7 @@ const expectedXml = [
     description: "Flowers for Richard Bakker",
     startBalance: 94.9,
     mutation: 14.63,
+    mutationType: "+",
     endBalance: 109.53,
   },
   {
@@ -95,7 +106,8 @@ const expectedXml = [
     accountNumber: "NL93ABNA0585619023",
     description: "Candy from Vincent de Vries",
     startBalance: 5429,
-    mutation: -939,
+    mutation: 939,
+    mutationType: "-",
     endBalance: 6368,
   },
   {
@@ -104,6 +116,7 @@ const expectedXml = [
     description: "Tickets from Rik King",
     startBalance: 84.46,
     mutation: 40.45,
+    mutationType: "+",
     endBalance: 124.91,
   },
   {
@@ -112,6 +125,7 @@ const expectedXml = [
     description: "Subscription from Vincent de Vries",
     startBalance: 38.86,
     mutation: 28.77,
+    mutationType: "+",
     endBalance: 67.63,
   },
   {
@@ -119,7 +133,8 @@ const expectedXml = [
     accountNumber: "NL32RABO0195610843",
     description: "Candy for Rik de Vries",
     startBalance: 51.01,
-    mutation: -25.59,
+    mutation: 25.59,
+    mutationType: "-",
     endBalance: 25.42,
   },
   {
@@ -128,6 +143,7 @@ const expectedXml = [
     description: "Flowers from Richard Bakker",
     startBalance: 62.17,
     mutation: 20.55,
+    mutationType: "+",
     endBalance: 82.72,
   },
   {
@@ -135,7 +151,8 @@ const expectedXml = [
     accountNumber: "NL91RABO0315273637",
     description: "Subscription for Jan Theuß",
     startBalance: 10.1,
-    mutation: -0.3,
+    mutation: 0.3,
+    mutationType: "-",
     endBalance: 9.8,
   },
   {
@@ -143,7 +160,8 @@ const expectedXml = [
     accountNumber: "NL43AEGO0773393871",
     description: "Clothes from Rik Theuß",
     startBalance: 21.54,
-    mutation: -17.57,
+    mutation: 17.57,
+    mutationType: "-",
     endBalance: 3.97,
   },
   {
@@ -152,6 +170,7 @@ const expectedXml = [
     description: "Subscription for Erik de Vries",
     startBalance: 3980,
     mutation: 1000,
+    mutationType: "+",
     endBalance: 4981,
   },
   {
@@ -159,7 +178,8 @@ const expectedXml = [
     accountNumber: "NL90ABNA0585647886",
     description: "Flowers for Jan Theuß",
     startBalance: 75.39,
-    mutation: -32.75,
+    mutation: 32.75,
+    mutationType: "-",
     endBalance: 42.64,
   },
 ];

@@ -2,7 +2,11 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 
-const { convertMT940toObject } = require("./utils/parser.utils");
+const { convertFileContentsToObject } = require("./utils/parser.utils");
+const {
+  getNonUniqueReferences,
+  getInvalidBalances,
+} = require("./utils/validate.utils");
 
 const app = express();
 const port = 1337;
@@ -27,10 +31,20 @@ app.post("/api/validate", upload.single("recordFile"), (req, res, next) => {
     return next(error);
   }
 
+  // Convert file contents to object
   const multerText = Buffer.from(file.buffer).toString("utf-8");
-  const jsonReponse = convertMT940toObject(file.originalname, multerText);
+  const jsonReponse = convertFileContentsToObject(
+    file.originalname,
+    multerText
+  );
+
+  const nonUniqueReferences = getNonUniqueReferences(jsonReponse);
+  const invalidBalances = getInvalidBalances(jsonReponse);
+
   const result = {
     fileText: jsonReponse,
+    nonUniqueReferences,
+    invalidBalances,
   };
 
   res.send(result);

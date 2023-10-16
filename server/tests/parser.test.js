@@ -29,7 +29,9 @@ describe("convertFileContentsToObject", () => {
               endBalance: NaN,
             };
           }
-          return record;
+          return {
+            ...record,
+          };
         })
       );
     });
@@ -49,8 +51,9 @@ describe("convertFileContentsToObject", () => {
               accountNumber: undefined,
               description: undefined,
               endBalance: NaN,
-              mutation: NaN,
+              mutation: undefined,
               startBalance: NaN,
+              mutationType: undefined,
             };
           }
           return record;
@@ -71,6 +74,7 @@ describe("convertFileContentsToObject", () => {
             return {
               ...record,
               reference: "",
+              mutationType: "+",
             };
           }
           return record;
@@ -101,6 +105,7 @@ describe("convertFileContentsToObject", () => {
               ...record,
               accountNumber: undefined,
               endBalance: NaN,
+              mutationType: "+",
             };
           }
           return record;
@@ -122,8 +127,9 @@ describe("convertFileContentsToObject", () => {
               accountNumber: undefined,
               description: undefined,
               endBalance: NaN,
-              mutation: NaN,
+              mutation: undefined,
               startBalance: NaN,
+              mutationType: undefined,
             };
           }
           return record;
