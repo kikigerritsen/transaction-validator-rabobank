@@ -19,37 +19,41 @@ An assignment for the Rabobank
 #### Front-end
 
 - `cd client`
-- `npm install`
-- `npm run dev`
+- `yarn`
+- `yarn start`
 
 Or if you want to run it from the root:
 
-Prerequisite packages are installed with: `cd client && npm install`
+Prerequisite packages are installed with: `cd client && yarn`
 
-- `npm run start:client`
+- `yarn run start:client`
 
 #### Back-end
 
 - `cd server`
-- `npm install`
-- `npm run dev`
+- `yarn`
+- `yarn start`
 
 Or if you want to run it from the root:
 
-Prerequisite packages are installed with: `cd server && npm install`
+Prerequisite packages are installed with: `cd server && yarn`
 
-- `npm run start:server`
+- `yarn run start:server`
 
 ---
 
 ## How to test
 
-### Front-end
+### Separately
+
+#### Front-end
 
 - `cd client`
-- `npm run test`
+- `yarn`
+- `yarn test`
 
-### Back-end
+#### Back-end
 
 - `cd server`
-- `npm run test`
+- `yarn`
+- `yarn test`

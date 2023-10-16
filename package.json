@@ -7,7 +7,6 @@
   "license": "MIT",
   "scripts": {
     "start:server": "node server/index.js",
-    "start:client": "cd client && yarn dev",
-    "start:dev": "concurrently \"yarn start:server\" \"yarn start:client\""
+    "start:client": "cd client && yarn start"
   }
 }
