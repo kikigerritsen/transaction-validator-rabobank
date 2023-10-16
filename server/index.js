@@ -13,7 +13,7 @@ const port = 1337;
 
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send({
     message: "Hello World!",
   });
@@ -42,7 +42,6 @@ app.post("/api/validate", upload.single("recordFile"), (req, res, next) => {
   const invalidBalances = getInvalidBalances(jsonReponse);
 
   const result = {
-    fileText: jsonReponse,
     nonUniqueReferences,
     invalidBalances,
   };
