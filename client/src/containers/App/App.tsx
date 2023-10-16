@@ -10,15 +10,16 @@ import {
 const App = () => {
   const [jsonResponse, setJsonResponse] = useState<ITransactionObject>();
 
-  const handleResponse = (jsonResponse: IJsonResponse) => {
-    if (jsonResponse.invalidBalances.length > 0)
+  const handleResponse = (response: IJsonResponse) => {
+    setJsonResponse(undefined);
+    if (response.invalidBalances.length > 0)
       setJsonResponse({
-        json: jsonResponse.invalidBalances,
+        json: response.invalidBalances,
         tableType: "invalidBalances",
       });
-    else if (jsonResponse.nonUniqueReferences.length > 0)
+    else if (response.nonUniqueReferences.length > 0)
       setJsonResponse({
-        json: jsonResponse.nonUniqueReferences,
+        json: response.nonUniqueReferences,
         tableType: "nonUniqueReferences",
       });
   };
