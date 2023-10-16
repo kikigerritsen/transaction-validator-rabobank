@@ -1,13 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    font-family: "Montserrat", sans-serif;
-    padding: 0;
-    margin: 0;
-  }
-`;
-
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
@@ -39,4 +31,13 @@ const InputFile = styled.div`
   }
 `;
 
-export { GlobalStyle, InputFile, Title };
+const ErrorMessage = styled.div`
+  color: #d83d3d;
+  padding: 1rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  background: #ffebee;
+  margin: 1rem;
+`;
+
+export { ErrorMessage, InputFile, Title };

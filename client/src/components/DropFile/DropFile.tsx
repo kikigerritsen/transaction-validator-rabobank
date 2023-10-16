@@ -1,5 +1,5 @@
 import { useState, FormEvent, useEffect } from "react";
-import { InputFile } from "./DropFile.styles";
+import { ErrorMessage, InputFile } from "./DropFile.styles";
 
 import { IJsonResponse } from "../../types/transaction.types";
 
@@ -41,7 +41,6 @@ const DropFile = ({ getResponse }: IDropFileProps) => {
   };
   return (
     <div>
-      {error && <div>{error.message}</div>}
       <form
         id="uploadForm"
         encType="multipart/form-data"
@@ -63,10 +62,17 @@ const DropFile = ({ getResponse }: IDropFileProps) => {
               or
               <br />
               Click to add
+              <br />
+              Note: only .csv and .xml files are accepted
             </div>
           </div>
         </InputFile>
       </form>
+      {error && (
+        <ErrorMessage>
+          {error.message} osiejfoseijfesoijfoseijofies
+        </ErrorMessage>
+      )}
     </div>
   );
 };
