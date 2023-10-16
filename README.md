@@ -2,6 +2,9 @@
 
 An assignment for the Rabobank
 
+- NPM version: 9.3.1
+- Node version: 18.14.1
+
 ## Technical decisions
 
 - For the front-end I took `NextJS` as a framework. It is easy to set up for data fetching, typescript and styling.
