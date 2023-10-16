@@ -35,7 +35,6 @@ const DropFile = ({ getResponse }: IDropFileProps) => {
       setJsonResponse(data);
       setError(null);
     } catch (error: Error | any) {
-      console.error(error);
       setError(error);
     } finally {
       setIsLoading(false);
@@ -58,6 +57,7 @@ const DropFile = ({ getResponse }: IDropFileProps) => {
               className="upload"
               name="recordFile"
               accept=".csv,.xml"
+              data-testid="recordFile"
             />
             <div className="dropZoneOverlay">
               Drag and drop your transaction file <br />
@@ -70,7 +70,9 @@ const DropFile = ({ getResponse }: IDropFileProps) => {
           </div>
         </InputFile>
       </form>
-      {error && <ErrorMessage>{error.message}</ErrorMessage>}
+      {error && (
+        <ErrorMessage data-testid="error">{error.message}</ErrorMessage>
+      )}
     </div>
   );
 };

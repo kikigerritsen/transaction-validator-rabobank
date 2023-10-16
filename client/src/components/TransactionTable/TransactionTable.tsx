@@ -8,7 +8,7 @@ interface ITransactionTableProps extends ITransactionObject {}
 
 const TransactionTable = ({ json, tableType }: ITransactionTableProps) => {
   return (
-    <Table>
+    <Table data-testid="transactionTable">
       <thead>
         <tr>
           <td>Reference</td>
