@@ -32,7 +32,7 @@ app.post("/api/validate", upload.single("recordFile"), (req, res, next) => {
   }
 
   // Convert file contents to object
-  const multerText = Buffer.from(file.buffer).toString("utf-8");
+  const multerText = Buffer.from(file.buffer, "latin1").toString("latin1");
   const jsonReponse = convertFileContentsToObject(
     file.originalname,
     multerText

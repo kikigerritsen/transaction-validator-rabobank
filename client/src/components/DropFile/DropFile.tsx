@@ -1,4 +1,5 @@
 import { useState, FormEvent, useEffect } from "react";
+
 import { ErrorMessage, InputFile } from "./DropFile.styles";
 
 import { IJsonResponse } from "../../types/transaction.types";
@@ -32,6 +33,7 @@ const DropFile = ({ getResponse }: IDropFileProps) => {
 
       const data = await response.json();
       setJsonResponse(data);
+      setError(null);
     } catch (error: Error | any) {
       console.error(error);
       setError(error);
@@ -43,7 +45,7 @@ const DropFile = ({ getResponse }: IDropFileProps) => {
     <div>
       <form
         id="uploadForm"
-        encType="multipart/form-data"
+        encType="application/json"
         onChange={onSubmit}
         method="post"
       >
@@ -68,11 +70,7 @@ const DropFile = ({ getResponse }: IDropFileProps) => {
           </div>
         </InputFile>
       </form>
-      {error && (
-        <ErrorMessage>
-          {error.message} osiejfoseijfesoijfoseijofies
-        </ErrorMessage>
-      )}
+      {error && <ErrorMessage>{error.message}</ErrorMessage>}
     </div>
   );
 };
